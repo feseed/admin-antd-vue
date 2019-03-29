@@ -7,7 +7,7 @@ import LayoutAider from '@/layout/LayoutAider'
 Vue.use(Router)
 
 // 所有路由规则
-const routes = [
+export const routes = [
 	{
 		path: '/login',
 		name: 'login',
@@ -19,28 +19,28 @@ const routes = [
 		children: [
 			// Demo Page
 			{
-				path: 'demoM',
+				path: '/demoM',
 				name: 'demoM',
 				component: LayoutAider,
 				children: [
 					{
-						path: 'demo',
+						path: '/demoM/demo',
 						name: 'demo',
 						component: () => import('@/pages/demo/Demo'),
 					},
 					{
-						path: 'demoTemp',
+						path: '/demoM/demoTemp',
 						name: 'demoTemp',
 						component: LayoutAider,
 						children: [
 							{
-								path: 'demoChild',
-								path: 'demoChild',
+								path: '/demoM/demoTemp/demoChild',
+								name: 'demoChild',
 								component: () => import('@/pages/demo/DemoChild')
 							},
 							{
-								path: 'demoChildUpdate',
-								path: 'demoChildUpdate',
+								path: '/demoM/demoTemp/demoChildUpdate',
+								name: 'demoChildUpdate',
 								component: () => import('@/pages/demo/DemoChildUpdate')
 							},
 						],

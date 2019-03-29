@@ -1,6 +1,6 @@
 import Menu from 'ant-design-vue/es/menu'
 import Icon from 'ant-design-vue/es/icon'
-
+// import { routes } from '@/router'
 const { Item, SubMenu } = Menu
 
 export default {
@@ -76,7 +76,8 @@ export default {
 			const routes = this.$route.matched.slice()
 			console.log('updateMenu routes: ', routes.slice())
 
-			this.selectedKeys = [routes.pop().path]
+			this.selectedKeys = [routes.pop().path.replace(/(.+)(Update|Add|Create)$/, '$1')]
+			// this.selectedKeys = this.regulateSelectedKeys(routes.pop().path)
 
 			const openKeys = []
 			if (this.mode === 'inline') {
@@ -89,6 +90,25 @@ export default {
 			console.log('this.openKeys: ', this.openKeys)
 			console.log('this.selectedKeys: ', this.selectedKeys)
 		},
+		// 校正侧边菜单选中状态
+		// regulateSelectedKeys (currentPath) {
+		// 	let actionRegulate = function (menus) {
+		// 		let selectedKeys = []
+		// 		menus.forEach(item => {
+		// 			if (menus.children && menus.children.length) {
+		// 				actionRegulate(menus.children)
+		// 			}
+		// 			if (item.path === currentPath) {
+		// 				selectedKeys = [currentPath]
+		// 			} else {
+		// 				selectedKeys = item.children ? item.children.map(child => child.path) : [item.path]
+		// 			}
+		// 			console.log('selectedKeys-----', selectedKeys)
+		// 		})
+		// 		return selectedKeys
+		// 	}
+		// 	return actionRegulate(routes)
+		// },
 
 		// render
 		renderItem (menu) {
@@ -121,7 +141,7 @@ export default {
 			)
 		},
 		renderIcon (icon) {
-			if (icon === 'none' || icon === undefined) {
+			if (icon === 'none' || !icon) {
 				return null
 			}
 			const props = {}

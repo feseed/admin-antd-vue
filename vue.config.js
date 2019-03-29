@@ -2,7 +2,7 @@ const configUtils = require('./vue.config.utils')
 
 module.exports = {
 	// 基地址
-	baseUrl: '/scm2/',
+	baseUrl: '/admin/',
 	// runtimeCompiler: true,
 	// webpack 配置
 	chainWebpack: config => {

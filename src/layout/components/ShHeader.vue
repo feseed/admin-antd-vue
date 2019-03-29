@@ -4,7 +4,7 @@
 			<div>
 				<a-icon class="header-trigger" :type="this.collapsed ? 'menu-unfold' : 'menu-fold'" @click.native="handlerToggle"></a-icon>
 				<a class="header__rollback" href="javascript:void(0);" @click="rollBackToOther">
-					<a-icon type="rollback"></a-icon>
+					<!-- <a-icon type="rollback"></a-icon> -->
 				</a>
 			</div>
 			<div class="header__userInfo">

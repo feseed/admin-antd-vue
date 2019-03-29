@@ -62,19 +62,31 @@ export default {
 				}
 			})
 			this.sideMenuRoutes = arr2Tree(sideMenusOfFlat)
-			console.log('this.sideMenuRoutes: ', this.sideMenuRoutes)
+			// console.log('this.sideMenuRoutes: ', this.sideMenuRoutes)
 		},
 	},
 }
 </script>
 
 <style>
-/* .layout__sider-bar {
+.ant-layout-sider {
+	background: #333a4e;
+}
+.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub
+{
+	background: #333a4e !important;
+	box-shadow: none !important;
+}
+</style>
+
+<style scoped>
+.layout__sider-bar {
 	height: 100vh;
 	overflow: hidden;
 	background-color: #333a4e;
-} */
-.layout__sider-bar .logo {
+}
+.layout__sider-bar >>> .logo {
 	height: 60px;
 	line-height: 60px;
 	font-size: 18px;
@@ -82,38 +94,22 @@ export default {
 	color: #fff;
 	background-color: #333a4e;
 }
-/* .layout__sider-bar .sider-bar__content {
-	height: 100%;
-	margin-bottom: -17px;
-	margin-right: -17px;
-	overflow-y: scroll;
-}
-.layout__sider-bar.ant-layout-sider {
-	background: #333a4e;
-}
-.layout__sider-bar .ant-menu-inline .ant-menu-item,
-.layout__sider-bar .ant-menu-inline .ant-menu-submenu-title
+
+.layout__sider-bar >>> .ant-menu-sub.ant-menu-inline > .ant-menu-item,
+.layout__sider-bar >>> .ant-menu-inline .ant-menu-submenu-title
 {
-	text-align: left !important;
 	font-size: 14px;
-	height: 60px !important;
-	line-height: 60px !important;
+	height: 50px !important;
+	line-height: 50px !important;
+	margin: 8px 0;
 	background-color: #333a4e;
 }
-
-.layout__sider-bar .ant-menu-inline .ant-menu-item.ant-menu-item-selected {
+.layout__sider-bar >>> .ant-menu-inline .ant-menu-item.ant-menu-item-selected {
 	background-color: #108ee9;
 }
-
-.layout__sider-bar .ant-menu-inline .ant-menu-submenu-inline.ant-menu-submenu-open > .ant-menu-submenu-title
+.layout__sider-bar >>> .ant-menu-inline .ant-menu-submenu-inline.ant-menu-submenu-open > .ant-menu-submenu-title
 {
 	border-left: 3px solid #4a90e2;
 	background-color: #3e445c;
 }
-
-.layout__sider-bar .ant-menu-dark,
-.layout__sider-bar .ant-menu-dark .ant-menu-sub
-{
-	background-color: #333a4e;
-} */
 </style>
