@@ -1,14 +1,14 @@
 <template>
 	<!-- 头部查询条件 -->
 	<div class="query-conditions">
-		<p class="query-conditions__header">查询条件</p>
+		<div class="query-conditions__header">查询条件</div>
 		<div class="query-conditions__form">
 			<div class="conditions__form__left" :class="styleIsExpand">
 				<slot></slot>
 			</div>
 			<div class="conditions__form__right">
-				<a-button type="primary" html-type="submit" @click="handleActionSearch" class="margin-right-10">查 询</a-button>
-				<a-button type="ghost" @click.prevent="resetForm()" class="margin-right-10">重 置</a-button>
+				<a-button type="primary" @click="handleActionSearch">查 询</a-button>
+				<a-button @click.prevent="resetForm()" class="form__right__reset">重 置</a-button>
 				<a @click="handleExpand" href="javascript:void(0);">
 					<span class="conditions__form__right--color">{{isExpandText}}</span>&nbsp;
 					<a-icon :type="iconType"></a-icon>
@@ -72,9 +72,7 @@ export default {
 .query-conditions__form {
 	display: flex;
 }
-.query-conditions__form >>> .ant-form-inline {
-	margin: 20px 0;
-}
+
 .conditions__form__left {
 	flex: 1;
 	overflow: hidden;
@@ -88,13 +86,22 @@ export default {
 .conditions__form__left--close {
 	height: 74px;
 }
-/* .ant-select-dropdown-menu-item,
-.conditions__form__left >>> .ant-form-item-label label {
-	font-size: 14px !important;
-} */
-/* .conditions__form__left >>> .ant-select-selection__rendered .ant-select-selection-selected-value {
-	font-size: 14px;
-} */
+
+.conditions__form__left >>> .ant-form-inline > .ant-row {
+	margin: 20px 0;
+}
+.conditions__form__left >>> .ant-form-item {
+	display: flex;
+	margin: 0;
+}
+.conditions__form__left >>> .ant-form-item-control-wrapper {
+	flex: 1;
+}
+.conditions__form__left >>> .ant-form-item-control-wrapper .ant-form-item-children,
+.conditions__form__left >>> .ant-form-item-control-wrapper .ant-calendar-picker
+{
+	width: 100%;
+}
 
 .conditions__form__left >>> .ant-input,
 .conditions__form__left >>> .ant-select-selection,
@@ -107,6 +114,9 @@ export default {
 .conditions__form__right {
 	padding-top: 20px;
 	width: 200px;
+}
+.conditions__form__right .form__right__reset {
+	margin: 0 10px;
 }
 .conditions__form__right--color {
 	color: rgb(24, 144, 255);

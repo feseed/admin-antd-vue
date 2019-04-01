@@ -5,8 +5,8 @@
 				<span>{{title}}</span>
 			</div>
 			<div class="nav__content__right">
-				<a-button @click="$emit('on-refresh')" v-if="refresh" type="ghost" icon="sync" class="nav__content__right__sync">刷新</a-button>
-				<a-button @click="handleBack" type="ghost" icon="left" class="nav__content__right__back">返回</a-button>
+				<a-button @click="$emit('on-refresh')" v-if="refresh" icon="sync" class="nav__content__right__sync">刷新</a-button>
+				<a-button @click="handleBack" icon="left" class="nav__content__right__back">返回</a-button>
 			</div>
 		</div>
 	</nav>

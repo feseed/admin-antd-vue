@@ -3,7 +3,6 @@
 		<sider-bar></sider-bar>
 		<div class="layout__main">
 			<sh-header></sh-header>
-			<!-- <sh-breadcrumb :breadcrumbList="currentPathLevel"></sh-breadcrumb> -->
 			<main-content></main-content>
 		</div>
 	</section>

@@ -1,7 +1,22 @@
 <template lang="pug">
-	div#app
-		router-view
+	a-locale-provider(:locale="locale")
+		div#app
+			router-view
 </template>
+
+<script>
+import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN'
+
+export default {
+	name: 'App',
+	data () {
+		return {
+			locale: zhCN,
+		}
+	},
+}
+</script>
+
 
 <style lang="stylus">
 	#app

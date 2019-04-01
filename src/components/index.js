@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import DataStatus from '@/components/DataStatus'
+import DataStatusList from '@/components/DataStatusList'
 import DotColor from '@/components/DotColor'
 import HeaderNav from '@/components/HeaderNav'
 import InfoCard from '@/components/InfoCard'
@@ -9,7 +9,7 @@ import UpdateCard from '@/components/UpdateCard'
 import UpdatePanel from '@/components/UpdatePanel'
 
 // 初始化全局组件
-Vue.component(DataStatus.name, DataStatus)
+Vue.component(DataStatusList.name, DataStatusList)
 Vue.component(DotColor.name, DotColor)
 Vue.component(HeaderNav.name, HeaderNav)
 Vue.component(InfoCard.name, InfoCard)

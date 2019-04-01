@@ -69,7 +69,7 @@ export default {
 						if (res.code === 0) {
 							localStore.set('AccessToken', res.data.token)
 							localStore.set('Expires', res.data.expires)
-							this.$router.push('demoTemp')
+							this.$router.push('/demoM/demo')
 						}
 					})
 				} else {
