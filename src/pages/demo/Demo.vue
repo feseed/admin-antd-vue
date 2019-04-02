@@ -93,6 +93,7 @@
 </template>
 
 <script>
+import { obj2Params } from '@gauseen/tools'
 import { fetchDemoList } from '@/api/demo'
 
 export default {
@@ -169,12 +170,17 @@ export default {
 		},
 		// 表格详情
 		handleTableInfo (item) {
-			this.$router.push('/demoM/demoInfo')
+			let params = {
+				id: item.id,
+			}
+			// 通过 URL?key=value 传参
+			this.$router.push(`/demoM/demoInfo?${obj2Params(params)}`)
 			console.log('table Info: ', item)
 		},
 		// 表格更新
 		handleTableUpdate (item) {
-			this.$router.push('/demoM/demoUpdate')
+			// 通过路由声明 /:id 传参
+			this.$router.push('/demoM/demoUpdate/123')
 			console.log('table Update: ', item)
 		},
 		// 表格删除

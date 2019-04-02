@@ -76,7 +76,7 @@ export default {
 			const routes = this.$route.matched.slice()
 			console.log('updateMenu routes: ', routes.slice())
 
-			this.selectedKeys = [routes.pop().path.replace(/(.+)(Update|Info|Add|Create)$/, '$1')]
+			this.selectedKeys = [routes.pop().path.replace(/(.+)(Update|Info|Add|Create){1}(\/:.+)?/, '$1')]
 			// this.selectedKeys = this.regulateSelectedKeys(routes.pop().path)
 
 			const openKeys = []

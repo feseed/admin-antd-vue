@@ -34,7 +34,7 @@ export const routes = [
 						component: () => import('@/pages/demo/DemoInfo'),
 					},
 					{
-						path: '/demoM/demoUpdate',
+						path: '/demoM/demoUpdate/:id?',
 						name: 'demoUpdate',
 						component: () => import('@/pages/demo/DemoUpdate'),
 					},

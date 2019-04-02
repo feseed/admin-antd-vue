@@ -51,7 +51,7 @@ router.beforeEach(async (to, from, next) => {
 		// 添加侧边菜单
 		store.commit(ADD_DYNAMIC_MENUS, dynamicPermission.memuPermissions)
 		store.commit(ADD_DYNAMIC_PERMISSIONS, dynamicPermission.permissions)
-		next({ path: to.path, replace: true })
+		next({ path: to.fullPath, replace: true })
 		return
 	}
 	let hasPermission = store.state.dynamicPermissions.some(item => to.path.indexOf(item.right_action) !== -1)
