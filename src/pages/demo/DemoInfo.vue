@@ -108,6 +108,10 @@ export default {
 			],
 		}
 	},
+	mounted () {
+		// 获取传参值
+		console.log('DemoInfo Page item id = ', this.$route.query.id)
+	},
 	methods: {
 		onTabChange (tabKey) {
 			console.log('tab changed: ', tabKey)

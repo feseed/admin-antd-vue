@@ -56,6 +56,10 @@ export default {
 			isLoading: false,
 		}
 	},
+	mounted () {
+		// 获取传参值
+		console.log('DemoUpdate Page item id = ', this.$route.params.id)
+	},
 	methods: {
 		// 提交事件
 		submit () {
@@ -68,6 +72,7 @@ export default {
 				// 模拟异步操作
 				window.setTimeout(() => {
 					this.isLoading = false
+					this.$router.push('/demoM/demo')
 				}, 1000 * 2)
 			})
 

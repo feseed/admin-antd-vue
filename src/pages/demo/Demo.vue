@@ -180,7 +180,7 @@ export default {
 		// 表格更新
 		handleTableUpdate (item) {
 			// 通过路由声明 /:id 传参
-			this.$router.push('/demoM/demoUpdate/123')
+			this.$router.push(`/demoM/demoUpdate/${item.id}`)
 			console.log('table Update: ', item)
 		},
 		// 表格删除
