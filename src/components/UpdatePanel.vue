@@ -15,7 +15,7 @@
 				@click="handleSubmit"
 				:loading="isLoading"
 				type="primary"
-				class="footer__submit margin-right-20"
+				class="footer__submit"
 			>
 				提交
 			</a-button>

@@ -50,20 +50,51 @@
 						</a-col>
 						<a-col :span="8">
 							<a-form-item label="条件 06">
-								<a-input
-									v-decorator="rules.query01"
-									placeholder="请输入"
-								/>
+								<a-select defaultValue="gauseen" @change="handleChange">
+									<a-select-option v-for="item in selectList" :key="item.value" :value="item.value" :disabled="item.disabled">
+										{{item.text}}
+									</a-select-option>
+								</a-select>
 							</a-form-item>
 						</a-col>
 					</a-row>
 				</a-form>
 			</query-conditions>
+
+			<!-- 表格部分 -->
+		<search-result-panel>
+			<template slot="actionHeader">
+				<a-button @click="handleEdit" icon="edit">修 改</a-button>
+				<a-button icon="to-top">SAP 提报导出</a-button>
+				<a-button icon="download">导入</a-button>
+				<a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
+			</template>
+
+			<sh-table
+				ref="shTable"
+				:columns="columns"
+				:loading="loading"
+				:rowKey="record => record.id"
+				:fetchData="fetchTableData"
+				:rowSelection="{ selectedRowKeys: selectedRowKeys, onChange: onSelectChange }"
+			>
+				<div slot="operate" slot-scope="{ tableRow }">
+					<a @click="handleTableInfo(tableRow)" href="javascript:void(0);"> Info </a>
+					<a @click="handleTableUpdate(tableRow)" href="javascript:void(0);"> Update </a>
+					<a @click="handleTableDelete(tableRow)" href="javascript:void(0);"> Delete </a>
+				</div>
+				<div slot="emmm" slot-scope="{ tableRow }">
+					<a @click="handleTableEmmm(tableRow)" href="javascript:void(0);"> emmm </a>
+				</div>
+			</sh-table>
+		</search-result-panel>
 		</div>
 	</section>
 </template>
 
 <script>
+import { fetchDemoList } from '@/api/demo'
+
 export default {
 	name: 'Demo',
 	data () {
@@ -78,6 +109,23 @@ export default {
 				{ color: '#4BCED0', text: '未上架', value: 2000 },
 				{ color: '#D9001B', text: '未通过', value: 2000 },
 			],
+			selectList: [
+				{ text: 'gauseen', value: 'gauseen' },
+				{ text: 'iras', value: 'iras' },
+				{ text: 'disabled', value: 'disabled', disabled: true },
+				{ text: 'yimi', value: 'yimi' },
+			],
+			// 表格 列
+			columns: [
+				{ title: '操作', scopedSlots: { customRender: 'operate' } },
+				{ title: '名字', dataIndex: 'goodsName' },
+				{ title: '价格', dataIndex: 'goodsPrice' },
+				{ title: '类型', dataIndex: 'goodsType' },
+				{ title: '质量', dataIndex: 'quantity' },
+				{ title: 'emmm', scopedSlots: { customRender: 'emmm' } },
+			],
+			selectedRowKeys: [],
+			loading: false,
 			rules: {
 				query01: [
 					'query01',
@@ -87,28 +135,71 @@ export default {
 						}],
 					}
 				],
-			}
+			},
 		}
 	},
 	mounted () {
-
 	},
 	methods: {
 		handleRefresh () {
 			console.log('handle Refresh')
+			this.$refs.shTable.reload()
 		},
 		onStatusClick (statusItem) {
 			console.log('onStatusClick: ', statusItem)
 		},
 		actionSearch () {
 			console.log('actionSearch: ')
+			this.$refs.shTable.reload(true)
 		},
 		resetForm () {
 			console.log('resetForm: ')
 		},
 		onChange(date, dateString) {
 			console.log('date change', date, dateString);
-		}
+		},
+		handleChange(value) {
+			console.log(`selected ${value}`);
+		},
+		handleEdit () {
+			window.alert('handleEdit')
+		},
+		handleAdd () {
+			window.alert('handleAdd')
+		},
+		// 表格详情
+		handleTableInfo (item) {
+			this.$router.push('/demoM/demoInfo')
+			console.log('table Info: ', item)
+		},
+		// 表格更新
+		handleTableUpdate (item) {
+			this.$router.push('/demoM/demoUpdate')
+			console.log('table Update: ', item)
+		},
+		// 表格删除
+		handleTableDelete (item) {
+			console.log('table Delete: ', item)
+		},
+		// 表格其他自定义设置
+		handleTableEmmm (item) {
+			console.log('table Emmm: ', item)
+		},
+		onSelectChange (selectedRowKeys) {
+			console.log('selectedRowKeys changed: ', selectedRowKeys)
+			this.selectedRowKeys = selectedRowKeys
+		},
+		fetchTableData (params) {
+			console.log('Demo pagination: ', JSON.stringify(params))
+			return fetchDemoList(params).then(res => {
+				return {
+					result: res.data.records,
+					total: res.data.total,
+					pageSize: res.data.size,
+					current: res.data.current,
+				}
+			})
+		},
 	},
 }
 </script>

@@ -29,6 +29,16 @@ export const routes = [
 						component: () => import('@/pages/demo/Demo'),
 					},
 					{
+						path: '/demoM/demoInfo',
+						name: 'demoInfo',
+						component: () => import('@/pages/demo/DemoInfo'),
+					},
+					{
+						path: '/demoM/demoUpdate',
+						name: 'demoUpdate',
+						component: () => import('@/pages/demo/DemoUpdate'),
+					},
+					{
 						path: '/demoM/demoTemp',
 						name: 'demoTemp',
 						component: LayoutAider,

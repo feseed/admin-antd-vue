@@ -76,7 +76,7 @@ export default {
 			const routes = this.$route.matched.slice()
 			console.log('updateMenu routes: ', routes.slice())
 
-			this.selectedKeys = [routes.pop().path.replace(/(.+)(Update|Add|Create)$/, '$1')]
+			this.selectedKeys = [routes.pop().path.replace(/(.+)(Update|Info|Add|Create)$/, '$1')]
 			// this.selectedKeys = this.regulateSelectedKeys(routes.pop().path)
 
 			const openKeys = []
@@ -87,8 +87,8 @@ export default {
 			}
 
 			this.collapsed ? (this.cachedOpenKeys = openKeys) : (this.openKeys = openKeys)
-			console.log('this.openKeys: ', this.openKeys)
-			console.log('this.selectedKeys: ', this.selectedKeys)
+			// console.log('this.openKeys: ', this.openKeys)
+			// console.log('this.selectedKeys: ', this.selectedKeys)
 		},
 		// 校正侧边菜单选中状态
 		// regulateSelectedKeys (currentPath) {

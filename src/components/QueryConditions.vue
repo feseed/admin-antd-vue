@@ -77,6 +77,7 @@ export default {
 	flex: 1;
 	overflow: hidden;
 	padding-left: 20px;
+	padding-right: 10px;
 }
 /* 展开 */
 .conditions__form__left--expand {
