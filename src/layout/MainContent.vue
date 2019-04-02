@@ -10,9 +10,9 @@
 <style scoped>
 .layout__main-content {
 	width: 100%;
-	height: calc(100vh - 60px);
+	/* height: calc(100vh - 60px); */
 	position: relative;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 	background-color: #f5f8fa;
 }
 .layout__main-content .main-content__header-mask {

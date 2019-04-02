@@ -1,5 +1,5 @@
 <template>
-	<header class="layout__header">
+	<header class="layout__header" :style="headerCollapsedWidth">
 		<div class="header-content">
 			<div>
 				<a-icon class="header-trigger" :type="this.collapsed ? 'menu-unfold' : 'menu-fold'" @click.native="handlerToggle"></a-icon>
@@ -32,6 +32,10 @@ export default {
 		collapsed () {
 			return this.$store.state.collapsed
 		},
+		// 头部根据侧边导航收起状态计算 width
+		headerCollapsedWidth () {
+			return { width: `calc(100% - ${this.$store.getters.siderBarCollapsedWidth}px)` }
+		},
 		// 头像 URL
 		avatarImg () {
 			return this.WXInfo ? this.WXInfo.headimgurl : require('@/assets/avatar.jpg')
@@ -50,13 +54,14 @@ export default {
 
 <style>
 .layout__header {
-	display: flex;
-	align-items: center;
+	position: fixed;
+	top: 0;
+	right: 0;
 	height: 60px;
-	width: 100%;
+	z-index: 9;
 	background-color: #fff;
 }
-.layout__header .header-trigger {
+.layout__header .header-content .header-trigger {
 	font-size: 22px;
 	cursor: pointer;
 }

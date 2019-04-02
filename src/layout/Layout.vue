@@ -1,7 +1,7 @@
 <template>
 	<section class="layout">
 		<sider-bar></sider-bar>
-		<div class="layout__main">
+		<div class="layout__main" :style="layoutCollapsedMarginLeft">
 			<sh-header></sh-header>
 			<main-content></main-content>
 		</div>
@@ -18,6 +18,10 @@ export default {
 	name: 'Layout',
 
 	computed: {
+		// .layout__main 根据侧边导航收起状态计算 margin-left
+		layoutCollapsedMarginLeft () {
+			return { marginLeft: `${this.$store.getters.siderBarCollapsedWidth}px` }
+		},
 		// 获取当前路由层级
 		currentPathLevel () {
 			return this.generatePathLevel(this.$route)
@@ -50,11 +54,14 @@ export default {
 	flex-wrap: wrap;
 }
 .layout .layout__main {
-	overflow: hidden;
-	height: 100vh;
+	position: relative;
+	padding-top: 60px;
+	/* overflow: hidden; */
+	min-height: 100vh;
 	display: flex;
 	flex: 1;
 	flex-wrap: wrap;
 	width: 100%;
+	/* margin-left: 200px; */
 }
 </style>

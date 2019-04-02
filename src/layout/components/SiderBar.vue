@@ -1,5 +1,5 @@
 <template>
-	<a-layout-sider v-model="collapsed" :trigger="false" class="layout__sider-bar">
+	<a-layout-sider v-model="collapsed" :trigger="false" :style="layoutSiderStyle" class="layout__sider-bar">
 		<div class="sider-bar__content">
 			<div class="logo">{{appName}}</div>
 			<sh-menu :menu="sideMenuRoutes" :collapsed="collapsed"></sh-menu>
@@ -37,6 +37,9 @@ export default {
 		// 获取侧边菜单导航
 		dynamicSideMenus () {
 			return deepCopy(this.$store.state.dynamicMenus).sort((a, b) => a.menu_sort - b.menu_sort)
+		},
+		layoutSiderStyle () {
+			return { overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }
 		},
 	},
 	created () {

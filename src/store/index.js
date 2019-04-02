@@ -18,6 +18,12 @@ export default new Vuex.Store({
 		// 所有权限数据
 		dynamicPermissions: [],
 	},
+	getters: {
+		// 侧边导航关闭 OR 展开时的宽度
+		siderBarCollapsedWidth (state) {
+			return state.collapsed ? 80 : 200
+		},
+	},
 
 	actions,
 	mutations,
