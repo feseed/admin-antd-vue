@@ -1,4 +1,4 @@
-## SCM2
+## Admin
 
 > 基于 vue 2.x、vue-cli 3.x
 
@@ -9,6 +9,8 @@
 2. javascript
 3. UI: ant-design-vue
 ```
+
+[ant-design-vue][ant-design-vue]
 
 ```
 |————— dist                 # 编译产出目录
@@ -136,3 +138,6 @@ yarn test
 ### 注意 :point_left: :point_left: :point_left:
 1. 必须使用 [yarn](https://yarnpkg.com/zh-Hans/) 依赖管理工具 :sunglasses:
 2. 编辑器请使用 Tab 缩进，webstorm、vscode、submit 用户请调试为**显示空格**
+
+<!-- 链接 -->
+[ant-design-vue]: https://vue.ant.design/docs/vue/introduce-cn/
