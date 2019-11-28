@@ -46,7 +46,7 @@ export default {
 			this.$store.commit(UPDATE_COLLAPSE)
 		},
 		rollBackToOther () {
-			window.location.href = process.env.VUE_APP_member_rms_middleGround
+			window.location.href = ''
 		},
 	},
 }
