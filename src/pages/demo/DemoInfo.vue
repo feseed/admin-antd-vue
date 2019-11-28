@@ -9,7 +9,7 @@
 					<td>供应商编码</td>
 					<td>ZJBM201902250001</td>
 					<td>供应商名称</td>
-					<td>上海旭耕农业科技有限公司</td>
+					<td>嘻嘻嘻嘻嘻Thanks♪(･ω･)ﾉ</td>
 				</tr>
 				<tr>
 					<td style="width: 130px;">证件编码 -- 证件编码</td>
@@ -30,7 +30,7 @@
 							<td>供应商编码</td>
 							<td>ZJBM201902250001</td>
 							<td>供应商名称</td>
-							<td>上海旭耕农业科技有限公司</td>
+							<td>嘻嘻嘻嘻嘻Thanks♪(･ω･)ﾉ</td>
 						</tr>
 						<tr>
 							<td>证件编码 02</td>
@@ -38,7 +38,7 @@
 							<td>供应商编码</td>
 							<td>ZJBM201902250001</td>
 							<td>供应商名称</td>
-							<td>上海旭耕农业科技有限公司</td>
+							<td>嘻嘻嘻嘻嘻Thanks♪(･ω･)ﾉ</td>
 						</tr>
 					</template>
 				</info-card>
@@ -73,7 +73,7 @@
 					<td>供应商编码</td>
 					<td>ZJBM201902250001</td>
 					<td>供应商名称</td>
-					<td>上海旭耕农业科技有限公司</td>
+					<td>嘻嘻嘻嘻嘻Thanks♪(･ω･)ﾉ</td>
 				</tr>
 				<tr>
 					<td>证件编码</td>
@@ -81,7 +81,7 @@
 					<td>供应商编码</td>
 					<td>ZJBM201902250001</td>
 					<td>供应商名称</td>
-					<td>上海旭耕农业科技有限公司</td>
+					<td>嘻嘻嘻嘻嘻Thanks♪(･ω･)ﾉ</td>
 				</tr>
 			</template>
 		</info-card>

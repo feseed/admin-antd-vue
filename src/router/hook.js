@@ -20,7 +20,7 @@ const whitelist = [
 
 const routerJumpControl = next => {
 	if (isProd()) {
-		window.location.href = process.env.VUE_APP_member_rms_middleGround_login
+		window.location.href = ''
 	} else {
 		next({ path: '/login' })
 	}

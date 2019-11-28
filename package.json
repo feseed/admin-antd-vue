@@ -7,7 +7,6 @@
     "serve": "vue-cli-service serve",
     "build:prd": "vue-cli-service build",
     "build:preview": "vue-cli-service build --mode preview",
-    "build:test": "vue-cli-service build --mode test",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "gh:preview": "gh-pages -d dist"
