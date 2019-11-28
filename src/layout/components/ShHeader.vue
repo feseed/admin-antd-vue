@@ -38,7 +38,7 @@ export default {
 		},
 		// 头像 URL
 		avatarImg () {
-			return this.WXInfo ? this.WXInfo.headimgurl : require('@/assets/avatar.jpg')
+			return this.WXInfo ? this.WXInfo.headimgurl : require('@/assets/logo.png')
 		},
 	},
 	methods: {
